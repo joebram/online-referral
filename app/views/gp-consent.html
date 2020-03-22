@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <p>Step 2/12</p>
+
+      <form action="/templates/check-your-answers" method="post">
+
+        {% from 'radios/macro.njk' import radios %}
+
+        {{ radios({
+          "idPrefix": "example",
+          "name": "example",
+          "fieldset": {
+            "legend": {
+              "text": "Do you have the young person's consent?",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+          }) }}
+
+      </form>
+
+      {% from 'button/macro.njk' import button %}
+
+      {{ button({
+        "href": "/gp-registered",
+        "text": "Save and continue"
+      }) }}
+
+      {{ backLink({
+        "href": "javascript:history.back()",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

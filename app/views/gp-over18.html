@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <p>Step 6/12</p>
+
+      {% from 'radios/macro.njk' import radios %}
+
+        {{ radios({
+          "idPrefix": "example",
+          "name": "example",
+          "fieldset": {
+            "legend": {
+              "text": "Is the young person over 18",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+          }) }}
+
+      {{ button({
+        "href": "/gp-support-needs",
+        "text": "Save and continue"
+      }) }}
+
+      {{ backLink({
+        "href": "javascript:history.back()",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

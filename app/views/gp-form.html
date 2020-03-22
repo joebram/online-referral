@@ -1,0 +1,128 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <p>Step 9/12</p>
+
+      <form>
+
+      {% from 'fieldset/macro.njk' import fieldset %}
+      {% from "input/macro.njk" import input %}
+
+      {% call fieldset({
+        legend: {
+          "text": "Their details",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": true
+        }
+      }) %}
+
+        {{ input({
+          label: {
+            "html": 'NHS number <span class="nhsuk-u-visually-hidden">line 1 of 2</span>'
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "nhs-number",
+          "name": "nhs-number"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Legal status"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "legal-status",
+          "name": "legal-status"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Surname"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "surname",
+          "name": "surname"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Middle name"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "middle-name",
+          "name": "middle-name"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "First name"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "first-name",
+          "name": "first-name"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Postcode"
+          },
+          "classes": "nhsuk-input--width-10",
+          "id": "address-postcode",
+          "name": "address-postcode"
+        }) }}
+
+      {% endcall %}
+
+      {% from 'date-input/macro.njk' import dateInput %}
+
+      {{ dateInput({
+        "id": "example",
+        "namePrefix": "example",
+        "fieldset": {
+          "legend": {
+            "text": "What is their date of birth?",
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
+          }
+        },
+        "hint": {
+          "text": "For example, 15 3 1984"
+        },
+        "items": [
+          {
+            "name": "day",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "month",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "year",
+            "classes": "nhsuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      </form>
+
+      {{ button({
+        "href": "/gp-form-2",
+        "text": "Save and continue"
+      }) }}
+
+      {{ backLink({
+        "href": "javascript:history.back()",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <p>Step 7/12</p>
+
+      <h2>Support needs</h2>
+
+      <p>What do they need support with?</p>
+
+      <p>
+        <a href="/gp-eating-disorder">Eating disorder</a>
+      </p>
+      <p>
+        <a href="/gp-mental-health">Mental health</a>
+      </p>
+
+<!--      <form>
+
+      {% from 'radios/macro.njk' import radios %}
+        {% from 'fieldset/macro.njk' import fieldset %}
+        {% from 'hint/macro.njk' import hint %}
+
+        {% call fieldset({
+          legend: {
+            "text": "Support needs",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+          }) %}
+          {{ hint({
+            "text": "What do you need support with?",
+            "classes": "nhsuk-u-margin-bottom-2"
+          }) }}
+          {{ radios({
+            "idPrefix": "example-hints",
+            "name": "example-hints",
+            "items": [
+          {
+            "value": "yes",
+            "text": "Eating discorder"
+          },
+          {
+            "value": "no",
+            "text": "Mental health"
+          }
+        ]
+        }) }}
+        {% endcall %}
+
+      </form> -->
+
+      {{ button({
+        "href": "/gp-mental-health",
+        "text": "Save and continue"
+      }) }}
+
+      {{ backLink({
+        "href": "javascript:history.back()",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

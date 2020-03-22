@@ -1,0 +1,155 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <p>Step 10/12</p>
+
+      <form>
+
+      {% from 'fieldset/macro.njk' import fieldset %}
+      {% from "input/macro.njk" import input %}
+
+      {% call fieldset({
+        legend: {
+          "text": "Their details continued...",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": true
+        }
+      }) %}
+
+        {{ input({
+          label: {
+            "html": 'Contact number <span class="nhsuk-u-visually-hidden">line 1 of 2</span>'
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "contact-number",
+          "name": "contact-number"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Ethnicity"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "ethnicity",
+          "name": "ethnicity"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "School"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "school",
+          "name": "school"
+        }) }}
+
+      {% endcall %}
+
+      {% from 'fieldset/macro.njk' import fieldset %}
+      {% from "input/macro.njk" import input %}
+
+      {% call fieldset({
+        legend: {
+          "text": "Family members",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": true
+        }
+      }) %}
+
+        {{ input({
+          label: {
+            "text": "Person one name"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "person-one-name",
+          "name": "person-one-name"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Person one relationship"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "person-two-realtionship",
+          "name": "person-one-relationship"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Person one date of birth"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "person-two-date-of-birth",
+          "name": "person-one-date-of-birth"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Person one school"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "person-two-school",
+          "name": "person-one-school"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Person two name"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "person-two-name",
+          "name": "person-two-name"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Person two relationship"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "person-two-realtionship",
+          "name": "person-two-relationship"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Person two date of birth"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "person-two-date-of-birth",
+          "name": "person-two-date-of-birth"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Person two school"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "person-two-school",
+          "name": "person-two-school"
+        }) }}
+
+      {% endcall %}
+
+      </form>
+
+      {{ button({
+        "href": "/gp-form-3",
+        "text": "Save and continue"
+      }) }}
+
+      {{ backLink({
+        "href": "javascript:history.back()",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
