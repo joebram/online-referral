@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <h2>Referral completed</h2>
+    <p>We aim to triage your referral within 24 hours.</p>
+    <p>If you need further support during this time please contact;</p>
+    <p>Crisis Care Team: 0151 293 3577</p>
+    <p>Kooth: <a href="http://www.kooth.com">www.kooth.com</a></p>
+
+
+      {{ button({
+        "href": "/complete",
+        "text": "View your referral summary"
+      }) }}
+
+      {{ backLink({
+        "href": "javascript:history.back()",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

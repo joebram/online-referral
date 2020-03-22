@@ -1,0 +1,136 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <h2>What language do you speak?</h2>
+      <form>
+
+      {% from 'select/macro.njk' import select %}
+
+      {{ select({
+        "id": "select-1",
+        "name": "select-1",
+        "label": {
+          "text": "Select your language"
+        },
+        "items": [
+          {
+            "value": 1,
+            "text": "🇬🇧 English (UK)"
+          },
+          {
+            "value": 2,
+            "text": "🇩🇪 German",
+            "selected": true
+          },
+          {
+            "value": 3,
+            "text": "NHS.UK frontend option 3",
+            "disabled": true
+          }
+        ]
+      }) }}
+
+        {% from 'radios/macro.njk' import radios %}
+
+        {{ radios({
+          "idPrefix": "example",
+          "name": "example",
+          "fieldset": {
+            "legend": {
+              "text": "Do you need an interpreter?",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+          }) }}
+
+      {% from 'textarea/macro.njk' import textarea %}
+
+      {{ textarea({
+        "name": "disabilities",
+        "id": "disabilities",
+        "label": {
+          "text": "Do you have any disabilities or difficulties (diagnosed or under investigation)"
+        },
+        "hint": {
+          "text": "Include more text here as a hint if necessary"
+        }
+      }) }}
+
+       {{ textarea({
+          "name": "professionals",
+          "id": "professionals",
+          "label": {
+            "text": "Professionals currently involved:"
+          },
+          "hint": {
+            "text": "Include more text here as a hint if necessary"
+          }
+        }) }}
+
+        {{ textarea({
+          "name": "services",
+          "id": "services",
+          "label": {
+            "text": "What services do you currently or previously accessed?"
+          },
+          "hint": {
+            "text": "Include more text here as a hint if necessary"
+          }
+        }) }}
+
+        {{ textarea({
+          "name": "Referral",
+          "id": "referral",
+          "label": {
+            "text": "What is the reason for the referral?"
+          },
+          "hint": {
+            "text": "Include more text here as a hint if necessary"
+          }
+        }) }}
+
+        {{ textarea({
+          "name": "help",
+          "id": "help",
+          "label": {
+            "text": "Has anythng helped?"
+          },
+          "hint": {
+            "text": "Include more text here as a hint if necessary"
+          }
+        }) }}
+
+      </form>
+
+      {{ button({
+        "href": "/complete",
+        "text": "Save and continue"
+      }) }}
+
+      {{ backLink({
+        "href": "javascript:history.back()",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
