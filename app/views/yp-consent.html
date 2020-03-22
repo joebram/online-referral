@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        Consent
+      </h1>
+
+      <form action="/templates/check-your-answers" method="post">
+
+        <p>
+          The information you give us will be held by Alder Hey and shared with the Liverpool CAMHS partnership so that we can help you.
+        </p>
+
+        {% from 'radios/macro.njk' import radios %}
+
+        {{ radios({
+          "idPrefix": "example",
+          "name": "example",
+          "fieldset": {
+            "legend": {
+              "text": "Do you give consent",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+          }) }}
+
+      </form>
+
+      {% from 'button/macro.njk' import button %}
+
+      {{ button({
+        "href": "/yp-registered",
+        "text": "Save and continue"
+      }) }}
+
+      {{ backLink({
+        "href": "javascript:history.back()",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

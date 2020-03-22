@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+    
+    <p>Step 1/14</p>
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        Tell us who you are
+      </h1>
+
+        <p>
+          Are you:
+        </p>
+
+        <p>
+          <a href="/yp-consent">A young person</a>
+        </p>
+        <p>
+          <a href="/parent">A parent or carer</a>
+        </p>
+        <p>
+          <a href="/professional">A doctor or professional</a>
+        </p>
+
+        <br />
+
+        {{ backLink({
+          "href": "javascript:history.back()",
+          "text": "back"
+        }) }}
+
+<!--
+
+        {% from 'select/macro.njk' import select %}
+
+        {{ select({
+          "id": "select-1",
+          "name": "select-1",
+          "label": {
+            "text": "Label text goes here"
+          },
+          "items": [
+            {
+              "value": 1,
+              "text": "NHS.UK frontend option 1"
+            },
+            {
+              "value": 2,
+              "text": "NHS.UK frontend option 2",
+              "selected": true
+            },
+            {
+              "value": 3,
+              "text": "NHS.UK frontend option 3",
+              "disabled": true
+            }
+          ]
+          }) }}
+
+        {{ button({
+          "text": "Continue",
+          "id": "btn_submit"
+        }) }}
+
+      </form>
+-->
+
+    </div>
+  </div>
+
+{% endblock %}

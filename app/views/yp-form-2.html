@@ -1,0 +1,126 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form>
+
+      {% from 'fieldset/macro.njk' import fieldset %}
+      {% from "input/macro.njk" import input %}
+
+      {% call fieldset({
+        legend: {
+          "text": "Your details continued...",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": true
+        }
+      }) %}
+
+        {{ input({
+          label: {
+            "html": 'Contact number <span class="nhsuk-u-visually-hidden">line 1 of 2</span>'
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "contact-number",
+          "name": "contact-number"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Ethnicity"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "ethnicity",
+          "name": "ethnicity"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "School"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "school",
+          "name": "school"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Family composition"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "familiy-composition",
+          "name": "familiy-composition"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "First name"
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "first-name",
+          "name": "first-name"
+        }) }}
+
+        {{ input({
+          label: {
+            "text": "Postcode"
+          },
+          "classes": "nhsuk-input--width-10",
+          "id": "address-postcode",
+          "name": "address-postcode"
+        }) }}
+
+      {% endcall %}
+
+      {% from 'date-input/macro.njk' import dateInput %}
+
+      {{ dateInput({
+        "id": "example",
+        "namePrefix": "example",
+        "fieldset": {
+          "legend": {
+            "text": "What is your date of birth?",
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
+          }
+        },
+        "hint": {
+          "text": "For example, 15 3 1984"
+        },
+        "items": [
+          {
+            "name": "day",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "month",
+            "classes": "nhsuk-input--width-2"
+          },
+          {
+            "name": "year",
+            "classes": "nhsuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      </form>
+
+      {{ button({
+        "href": "/yp-form-2",
+        "text": "Save and continue"
+      }) }}
+
+      {{ backLink({
+        "href": "javascript:history.back()",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

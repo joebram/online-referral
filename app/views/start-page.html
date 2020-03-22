@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ breadcrumb({
+  href: "/",
+  text: "Home"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Liverpool CAMHS online referral
+      </h1>
+
+      <p>
+        Use this service to: Create an online referral to Liverpool Childrne's and Adolescents Mental Health Service
+      </p>
+
+      <ul>
+        <li>
+          Assess if you need to access the service
+        </li>
+        <li>
+          Makde a referral
+        </li>
+        <li>
+          Receive advice
+        </li>
+      </ul>
+
+      <a href="/whoareyou" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Start now
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}
