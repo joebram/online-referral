@@ -8,6 +8,8 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
+      <p>Step 4/12</p>
+
       <h2>Your doctor</h2>
 
       <p>Enter your postcode below to help us find your doctor's surgery.</p>
@@ -26,7 +28,7 @@
           "name": "example-heading"
         }) }}
 
-      </form>
+      
 
       {% from 'button/macro.njk' import button %}
 
@@ -58,6 +60,9 @@
           }
         ]
         }) }}
+
+      </form>
+
       <br />
 
       {{ button({
@@ -69,8 +74,6 @@
         "href": "javascript:history.back()",
         "text": "Change my previous answer"
       }) }}
-
-
 
     </div>
   </div>
