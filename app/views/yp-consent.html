@@ -10,39 +10,38 @@
 
       <p>Step 2/12</p>
 
-      <h1 class="nhsuk-fieldset__legend--l">
-        Consent
-      </h1>
-
       <form action="/templates/check-your-answers" method="post">
 
-        <p>
-          The information you give us will be held by Alder Hey and shared with the Liverpool CAMHS partnership so that we can help you.
-        </p>
-
         {% from 'radios/macro.njk' import radios %}
+        {% from 'fieldset/macro.njk' import fieldset %}
+        {% from 'hint/macro.njk' import hint %}
 
-        {{ radios({
-          "idPrefix": "example",
-          "name": "example",
-          "fieldset": {
-            "legend": {
-              "text": "Do you give consent",
-              "classes": "nhsuk-fieldset__legend--l",
-              "isPageHeading": true
-            }
-          },
-          "items": [
-            {
-              "value": "yes",
-              "text": "Yes"
-            },
-            {
-              "value": "no",
-              "text": "No"
-            }
-          ]
+        {% call fieldset({
+          legend: {
+            "text": "Consent",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+          }) %}
+          {{ hint({
+            "text": "Are you happy for the Liverpool Children's and Adolecents Mental Health Service and Alder Hey to use the infomration that you provide? [Update this content]",
+            "classes": "nhsuk-u-margin-bottom-2"
           }) }}
+          {{ radios({
+            "idPrefix": "example-hints",
+            "name": "example-hints",
+            "items": [
+          {
+            "value": "yes",
+            "text": "Yes"
+          },
+          {
+            "value": "no",
+            "text": "No"
+          }
+        ]
+        }) }}
+        {% endcall %}
 
       </form>
 
