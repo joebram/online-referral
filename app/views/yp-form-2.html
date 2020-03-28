@@ -10,7 +10,7 @@
 
       <p>Step 10/12</p>
 
-      <form>
+      <form action="/yp-form-3" method="get">
 
       {% from 'fieldset/macro.njk' import fieldset %}
       {% from "input/macro.njk" import input %}
@@ -137,12 +137,10 @@
 
       {% endcall %}
 
-      </form>
+      <input type="submit" class="nhsuk-button" value="Save and continue">
+        </input>
 
-      {{ button({
-        "href": "/yp-form-3",
-        "text": "Save and continue"
-      }) }}
+      </form>
 
       {{ backLink({
         "href": "javascript:history.back()",

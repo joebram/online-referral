@@ -14,7 +14,7 @@
 
       <p>Enter a postcode below to find the young person's doctor's surgery.</p>
 
-      <form action="/templates/check-your-answers" method="post">
+      <form action="/gp-list" method="post">
 
         {% from 'input/macro.njk' import input %}
 
@@ -40,8 +40,8 @@
       {% from 'radios/macro.njk' import radios %}
 
       {{ radios({
-        "idPrefix": "example",
-        "name": "example",
+        "idPrefix": "list",
+        "name": "list",
         "fieldset": {
           "legend": {
             "text": "Results",
@@ -51,24 +51,24 @@
         },
         "items": [
           {
-            "value": "yes",
+            "value": "Yes",
             "text": "Doctor 1, address"
           },
           {
-            "value": "no",
+            "value": "No",
             "text": "Doctor 2, address"
           }
         ]
         }) }}
 
+
+        {{ button({
+          "text": "Save and continue"
+        }) }}
+
       </form>
 
       <br />
-
-      {{ button({
-        "href": "/gp-over18",
-        "text": "Save and continue"
-      }) }}
 
       {{ backLink({
         "href": "javascript:history.back()",

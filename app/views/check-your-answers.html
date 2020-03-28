@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Check your answers template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-u-margin-top-4">
+        Check your answers before sending your application
+      </h1>
+
+      <h2>
+        Personal details
+      </h2>
+
+      <p>First name: {{ data['first-name'] }}</p>
+      <p>Middle name: {{ data['middle-name'] }}</p>
+      <p>Surname: {{ data['surname'] }}</p>
+      <p>Address: {{ data['address-postcode'] }}
+      <p>Date of birth: {{ data['day'] }}</p>
+
+      <h2>
+        Doctors details
+      </h2>
+
+
+
+      <h2>
+        Now send your referral
+      </h2>
+
+      <p>
+        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <p>
+        Your details with be sent to Rose Medical Practice to begin your registration.
+      </p>
+
+      <a href="/templates/confirmation-page" class="nhsuk-button">
+        Accept and send registration
+      </a>
+
+    </div>
+  </div>
+{% endblock %}

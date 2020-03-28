@@ -11,7 +11,8 @@
     <p>Step 11/12</p>
 
     <h2>What language do you speak?</h2>
-      <form>
+      
+      <form action="/check-your-answers" method="get">
 
       {% from 'select/macro.njk' import select %}
 
@@ -115,12 +116,10 @@
           }
         }) }}
 
-      </form>
+        <input type="submit" class="nhsuk-button" value="Save and continue">
+        </input>
 
-      {{ button({
-        "href": "/complete",
-        "text": "Save and continue"
-      }) }}
+      </form>
 
       {{ backLink({
         "href": "javascript:history.back()",

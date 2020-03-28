@@ -10,25 +10,42 @@
     
     <p>Step 1/12</p>
 
-      <h1 class="nhsuk-fieldset__legend--l">
-        Tell us who you are
-      </h1>
+      <form action="/whoareyou" method="post">
 
-        <p>
-          Are you:
-        </p>
+        {% call fieldset({
+          legend: {
+            text: "I am a...",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
 
-        <p>
-          <a href="/yp-consent">A young person</a>
-        </p>
-        <p>
-          <a href="/parent">A parent or carer</a>
-        </p>
-        <p>
-          <a href="/gp-consent">A doctor or professional</a>
-        </p>
+        {{ radios({
+          "idPrefix": "who",
+          "name": "who",
+          "items": [
+            {
+              "value": "Young Person",
+              "text": "Young Person"
+            },
+            {
+              "value": "Parent",
+              "text": "Parent"
+            },
+            {
+              "value": "Professional",
+              "text": "Professional"
+            }
+          ]
+        }) }}
 
-        <br />
+        {% endcall %}
+
+        {{ button({
+          "text": "Save and continue"
+        }) }}
+
+      </form>
 
         {{ backLink({
           "href": "javascript:history.back()",

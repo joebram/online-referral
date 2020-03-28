@@ -10,7 +10,7 @@
 
       <p>Step 8/11</p>
 
-      <form>
+      <form action="/gp-form-2" method="get">
 
       {% from 'fieldset/macro.njk' import fieldset %}
       {% from "input/macro.njk" import input %}
@@ -110,12 +110,10 @@
         ]
       }) }}
 
-      </form>
+      <input type="submit" class="nhsuk-button" value="Save and continue">
+        </input>
 
-      {{ button({
-        "href": "/gp-form-2",
-        "text": "Save and continue"
-      }) }}
+      </form>
 
       {{ backLink({
         "href": "javascript:history.back()",

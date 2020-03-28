@@ -10,7 +10,7 @@
 
       <p>Step 3/11</p>
 
-      <form action="/templates/check-your-answers" method="post">
+      <form action="/gp-registered" method="post">
 
         {% from 'radios/macro.njk' import radios %}
         {% from 'fieldset/macro.njk' import fieldset %}
@@ -28,29 +28,27 @@
             "classes": "nhsuk-u-margin-bottom-2"
           }) }}
           {{ radios({
-            "idPrefix": "example-hints",
-            "name": "example-hints",
+            "idPrefix": "registered",
+            "name": "registered",
             "items": [
           {
-            "value": "yes",
+            "value": "Yes",
             "text": "Yes"
           },
           {
-            "value": "no",
+            "value": "No",
             "text": "No"
           }
         ]
         }) }}
+
         {% endcall %}
 
+        {{ button({
+          "text": "Save and continue"
+        }) }}
+
       </form>
-
-      {% from 'button/macro.njk' import button %}
-
-      {{ button({
-        "href": "/gp-registered-doctors",
-        "text": "Save and continue"
-      }) }}
 
       {{ backLink({
         "href": "javascript:history.back()",

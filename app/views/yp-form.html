@@ -10,7 +10,7 @@
 
       <p>Step 9/12</p>
 
-      <form>
+      <form action="/yp-form-2" method="get">
 
       {% from 'fieldset/macro.njk' import fieldset %}
       {% from "input/macro.njk" import input %}
@@ -22,15 +22,6 @@
           "isPageHeading": true
         }
       }) %}
-
-        {{ input({
-          label: {
-            "html": 'NHS number <span class="nhsuk-u-visually-hidden">line 1 of 2</span>'
-          },
-          "classes": "nhsuk-u-width-two-thirds",
-          "id": "nhs-number",
-          "name": "nhs-number"
-        }) }}
 
         {{ input({
           label: {
@@ -110,12 +101,11 @@
         ]
       }) }}
 
+      <input type="submit" class="nhsuk-button" value="Save and continue">
+        </input>
+
       </form>
 
-      {{ button({
-        "href": "/yp-form-2",
-        "text": "Save and continue"
-      }) }}
 
       {{ backLink({
         "href": "javascript:history.back()",

@@ -10,34 +10,38 @@
 
       <p>Step 5/11</p>
 
-      {% from 'radios/macro.njk' import radios %}
+      <form action="/gp-under18" method="post">
+
+        {% call fieldset({
+          legend: {
+            text: "Is the young person under 18?",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
 
         {{ radios({
-          "idPrefix": "example",
-          "name": "example",
-          "fieldset": {
-            "legend": {
-              "text": "Is the young person under 18",
-              "classes": "nhsuk-fieldset__legend--l",
-              "isPageHeading": true
-            }
-          },
+          "idPrefix": "under-18",
+          "name": "under-18",
           "items": [
             {
-              "value": "yes",
+              "value": "Yes",
               "text": "Yes"
             },
             {
-              "value": "no",
+              "value": "No",
               "text": "No"
             }
           ]
-          }) }}
+        }) }}
 
-      {{ button({
-        "href": "/gp-support-needs",
-        "text": "Save and continue"
-      }) }}
+        {% endcall %}
+
+        {{ button({
+          "text": "Save and continue"
+        }) }}
+
+      </form>
 
       {{ backLink({
         "href": "javascript:history.back()",

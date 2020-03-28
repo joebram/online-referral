@@ -10,40 +10,38 @@
 
       <p>Step 2/11</p>
 
-      <form action="/templates/check-your-answers" method="post">
+      <form action="/gp-consent" method="post">
 
-        {% from 'radios/macro.njk' import radios %}
+        {% call fieldset({
+          legend: {
+            text: "Do have the young person's consent?",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
 
         {{ radios({
-          "idPrefix": "example",
-          "name": "example",
-          "fieldset": {
-            "legend": {
-              "text": "Do you have the young person's consent?",
-              "classes": "nhsuk-fieldset__legend--l",
-              "isPageHeading": true
-            }
-          },
+          "idPrefix": "have-consent",
+          "name": "have-consent",
           "items": [
             {
-              "value": "yes",
+              "value": "Yes",
               "text": "Yes"
             },
             {
-              "value": "no",
+              "value": "No",
               "text": "No"
             }
           ]
-          }) }}
+        }) }}
+
+        {% endcall %}
+
+        {{ button({
+          "text": "Save and continue"
+        }) }}
 
       </form>
-
-      {% from 'button/macro.njk' import button %}
-
-      {{ button({
-        "href": "/gp-registered",
-        "text": "Save and continue"
-      }) }}
 
       {{ backLink({
         "href": "javascript:history.back()",
