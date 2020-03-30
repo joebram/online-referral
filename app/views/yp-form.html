@@ -34,13 +34,13 @@
 
         {{ input({
           label: {
-            "text": "Surname"
+            "text": "First name"
           },
           "classes": "nhsuk-u-width-two-thirds",
-          "id": "surname",
-          "name": "surname"
+          "id": "first-name",
+          "name": "first-name"
         }) }}
-
+        
         {{ input({
           label: {
             "text": "Middle name"
@@ -52,11 +52,11 @@
 
         {{ input({
           label: {
-            "text": "First name"
+            "text": "Surname"
           },
           "classes": "nhsuk-u-width-two-thirds",
-          "id": "first-name",
-          "name": "first-name"
+          "id": "surname",
+          "name": "surname"
         }) }}
 
         {{ input({
@@ -66,6 +66,15 @@
           "classes": "nhsuk-input--width-10",
           "id": "address-postcode",
           "name": "address-postcode"
+        }) }}
+
+        {{ input({
+          label: {
+            "html": 'Contact number'
+          },
+          "classes": "nhsuk-u-width-two-thirds",
+          "id": "contact-number",
+          "name": "contact-number"
         }) }}
 
       {% endcall %}

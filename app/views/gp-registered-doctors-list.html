@@ -28,8 +28,6 @@
           "name": "example-heading"
         }) }}
 
-      
-
       {% from 'button/macro.njk' import button %}
 
       {{ button({
@@ -51,20 +49,19 @@
         },
         "items": [
           {
-            "value": "Yes",
+            "value": "Doctor 1, address",
             "text": "Doctor 1, address"
           },
           {
-            "value": "No",
+            "value": "Doctor 2, address",
             "text": "Doctor 2, address"
           }
         ]
         }) }}
 
 
-        {{ button({
-          "text": "Save and continue"
-        }) }}
+        <input type="submit" class="nhsuk-button" value="Save and continue">
+        </input>
 
       </form>
 

@@ -9,24 +9,47 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1 class="nhsuk-u-margin-top-4">
-        Check your answers before sending your application
+        Check your answers before sending your referral to the Crisis Team
       </h1>
 
       <h2>
         Personal details
       </h2>
 
+      <p>Consent: {{ data['have-consent'] }} <a href="gp-consent" alt="change">Change</a></p>
+      <p>Registered doctor: {{ data['list'] }} <a href="gp-registered-doctors-list" alt="change"> Change</a></p>
+      <p>Needs help with: {{ data['support-needs'] }} <a href="gp-support-needs" alt="change"> Change</a></p>
+      <hr />
+
       <p>First name: {{ data['first-name'] }}</p>
       <p>Middle name: {{ data['middle-name'] }}</p>
       <p>Surname: {{ data['surname'] }}</p>
-      <p>Address: {{ data['address-postcode'] }}
+      <p>Address: {{ data['address-postcode'] }}</p>
       <p>Date of birth: {{ data['day'] }}</p>
+      <p>Phone number: {{ data['contact-number'] }}</p>
+      
+      <p><a href="gp-form" alt="change">Change</a></p>
+      
+      <hr / >
+      
+      <p>Ethnicity: {{ data['ethnicity'] }}</p>
+      <p>School: {{ data['school'] }}</p>
+      
+      <p><a href="gp-form-2" alt="change">Change</a></p>
+
+      <hr />
 
       <h2>
-        Doctors details
+        Family members
       </h2>
+      <p>Person 1 name: {{ data['person-one-name'] }}</p>
+      <p>Relationship {{ data['person-one-relationship'] }}</p>
+      <p>Date of birth {{ data['person-one-relationship'] }}</p>
+      <p>School {{ data['person-one-relationship'] }}</p>
 
+      <p><a href="gp-form-2" alt="change">Change</a></p>
 
+      <hr />
 
       <h2>
         Now send your referral
