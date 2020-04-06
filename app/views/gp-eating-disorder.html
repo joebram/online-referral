@@ -11,7 +11,25 @@
       <p>Step 7/11</p>
 
       <h1>Support with eating disorders</h1>
-      <p>Copy to go here...</p>
+
+      {% from 'input/macro.njk' import input %}
+
+      {{ input({
+        "label": {
+          "text": "What is your height?"
+        },
+        "id": "height",
+        "name": "hight"
+      }) }}
+
+
+      {{ input({
+        "label": {
+          "text": "What is your weight?"
+        },
+        "id": "weight",
+        "name": "weight"
+      }) }}
 
       {{ button({
         "href": "/gp-form",

@@ -8,56 +8,11 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-    <p>Step 10/11</p>
+    <p>Step 9/11</p>
 
-    <h2>What language do they speak?</h2>
+    <h2>Referral details</h2>
       
       <form action="/check-your-answers" method="get">
-
-      {% from 'select/macro.njk' import select %}
-
-      {{ select({
-        "id": "select-1",
-        "name": "select-1",
-        "label": {
-          "text": "Select your language"
-        },
-        "items": [
-          {
-            "value": 1,
-            "text": "🇬🇧 English (UK)"
-          },
-          {
-            "value": 2,
-            "text": "🇩🇪 German",
-            "selected": true
-          }
-        ]
-      }) }}
-
-        {% from 'radios/macro.njk' import radios %}
-
-        {{ radios({
-          "idPrefix": "example",
-          "name": "example",
-          "fieldset": {
-            "legend": {
-              "text": "Do they need an interpreter?",
-              "classes": "nhsuk-fieldset__legend--l",
-              "isPageHeading": true
-            }
-          },
-          "items": [
-            {
-              "value": "yes",
-              "text": "Yes"
-            },
-            {
-              "value": "no",
-              "text": "No"
-            }
-          ]
-          }) }}
 
       {% from 'textarea/macro.njk' import textarea %}
 

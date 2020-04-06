@@ -71,7 +71,7 @@ router.post('/gp-support-needs', function (req, res) {
   // Check whether the answer equals yes
   if (answer == "Mental"){
     // If the answer is yes send to the next question
-    res.redirect('/gp-mental-health')
+    res.redirect('/gp-form')
   }
   else {
     // If the answer is no send to the no screen 

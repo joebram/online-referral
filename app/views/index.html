@@ -9,7 +9,7 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>
-        Make a referral to the Liverpool Children's and Adolcesnts Mental Health Service
+        Make a referral to the Liverpool Children's and Adolescents Mental Health Service
       </h1>
 
       <p>
@@ -28,13 +28,69 @@
         </li>
       </ul>
 
+      <h2>Choose a language</h2>
+
+      <form action="/check-your-answers" method="get">
+
+      {% from 'select/macro.njk' import select %}
+
+      {{ select({
+        "id": "select-1",
+        "name": "select-1",
+        "label": {
+          "text": "Select your language"
+        },
+        "items": [
+          {
+            "value": 1,
+            "text": "English (UK)"
+          },
+          {
+            "value": 2,
+            "text": "German",
+            "selected": true
+          },
+          {
+            "value": 2,
+            "text": "Chinese",
+            "selected": true
+          }
+        ]
+      }) }}
+
+        {% from 'radios/macro.njk' import radios %}
+
+        {{ radios({
+          "idPrefix": "example",
+          "name": "example",
+          "fieldset": {
+            "legend": {
+              "text": "Is an interpreter needed?",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
+          }) }}
+
+        </form>
+
       <p>It will take roughly [2 minutes] to fill this out</p>
 
-      <h2>You will need:</h2>
+      <!--<h2>You will need:</h2>
       <ul>
         <li>Line one</li>
         <li>Line two</li>
-      </ul>
+      </ul>-->
 
       <a href="/whoareyou" class="nhsuk-button nhsuk-u-margin-bottom-8">
         Start now
