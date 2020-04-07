@@ -10,56 +10,38 @@
 
       <p>Step 7/12</p>
 
-      <h2>Support needs</h2>
-
-      <p>What do you need support with?</p>
-
-      <p>
-        <a href="/yp-eating-disorder">Eating disorder</a>
-      </p>
-      <p>
-        <a href="/yp-mental-health">Mental health</a>
-      </p>
-
-<!--      <form>
-
-      {% from 'radios/macro.njk' import radios %}
-        {% from 'fieldset/macro.njk' import fieldset %}
-        {% from 'hint/macro.njk' import hint %}
+      <form action="/yp-support-needs" method="post">
 
         {% call fieldset({
           legend: {
-            "text": "Support needs",
-            "classes": "nhsuk-fieldset__legend--l",
-            "isPageHeading": true
+            text: "What are the support needs of the young person?",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
           }
-          }) %}
-          {{ hint({
-            "text": "What do you need support with?",
-            "classes": "nhsuk-u-margin-bottom-2"
-          }) }}
-          {{ radios({
-            "idPrefix": "example-hints",
-            "name": "example-hints",
-            "items": [
-          {
-            "value": "yes",
-            "text": "Eating discorder"
-          },
-          {
-            "value": "no",
-            "text": "Mental health"
-          }
-        ]
+        }) %}
+
+        {{ radios({
+          "idPrefix": "support-needs",
+          "name": "support-needs",
+          "items": [
+            {
+              "value": "Mental",
+              "text": "Mental Health"
+            },
+            {
+              "value": "Eating",
+              "text": "Eating Disorder"
+            }
+          ]
         }) }}
+
         {% endcall %}
 
-      </form> -->
+        {{ button({
+          "text": "Save and continue"
+        }) }}
 
-      {{ button({
-        "href": "/yp-mental-health",
-        "text": "Save and continue"
-      }) }}
+      </form>
 
       {{ backLink({
         "href": "javascript:history.back()",

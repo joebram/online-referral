@@ -10,14 +10,45 @@
 
       <p>Step 5/12</p>
 
-      <h2>Contact carer</h2>
+      <form action="/contact-carer" method="post">
 
-      <p>We will have to contact whoever has parental responsibility regarding this referral. Is that ok?</p>
+        {% from 'radios/macro.njk' import radios %}
+        {% from 'fieldset/macro.njk' import fieldset %}
+        {% from 'hint/macro.njk' import hint %}
 
-      {{ button({
-        "href": "/yp-over18",
-        "text": "Save and continue"
-      }) }}
+        {% call fieldset({
+          legend: {
+            "text": "Contact carer",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+          }) %}
+          {{ hint({
+            "text": "We will have to contact whoever has parental responsibility regarding this referral. Is that ok?",
+            "classes": "nhsuk-u-margin-bottom-2"
+          }) }}
+          {{ radios({
+            "idPrefix": "contact-carer",
+            "name": "contact-carer",
+            "items": [
+          {
+            "value": "Yes",
+            "text": "Yes"
+          },
+          {
+            "value": "No",
+            "text": "No"
+          }
+        ]
+        }) }}
+
+        {% endcall %}
+
+        {{ button({
+          "text": "Save and continue"
+        }) }}
+
+      </form>
 
       {{ backLink({
         "href": "javascript:history.back()",

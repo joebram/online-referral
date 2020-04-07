@@ -97,6 +97,35 @@ router.post('/yp-consent', function (req, res) {
 })
 
 // Make sure this route matches the one you used in the action on the form element
+router.post('/contact-carer', function (req, res) {
+  // Set a variable to the answer so we can access it later
+  var answer = req.session.data['contact-carer']
+  // Check whether the answer equals yes
+  if (answer == "Yes"){
+    // If the answer is yes send to the next question
+    res.redirect('/yp-under18')
+  }
+  else {
+    // If the answer is no send to the no screen 
+    res.redirect('/answer-no')
+  }
+})
+
+router.post('/yp-support-needs', function (req, res) {
+  // Set a variable to the answer so we can access it later
+  var answer = req.session.data['support-needs']
+  // Check whether the answer equals yes
+  if (answer == "Mental"){
+    // If the answer is yes send to the next question
+    res.redirect('/yp-form')
+  }
+  else {
+    // If the answer is no send to the no screen 
+    res.redirect('/yp-eating-disorder')
+  }
+})
+
+// Make sure this route matches the one you used in the action on the form element
 router.post('/whoareyou', function (req, res) {
   // Set a variable to the answer so we can access it later
   var answer = req.session.data['who']
