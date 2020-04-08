@@ -12,34 +12,44 @@
 
       <form action="/gp-under18" method="post">
 
-        {% call fieldset({
-          legend: {
-            text: "Is the young person under 18?",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
+        {% from 'date-input/macro.njk' import dateInput %}
 
-        {{ radios({
-          "idPrefix": "under-18",
-          "name": "under-18",
+        {{ dateInput({
+          "id": "example",
+          "namePrefix": "example",
+          "fieldset": {
+            "legend": {
+              "text": "What is their date of birth?",
+              "classes": "nhsuk-label--l",
+              "isPageHeading": true
+            }
+          },
+          "hint": {
+            "text": "For example, 15 3 1984"
+          },
           "items": [
             {
-              "value": "Yes",
-              "text": "Yes"
+              "name": "day",
+              "classes": "nhsuk-input--width-2"
             },
             {
-              "value": "No",
-              "text": "No"
+              "name": "month",
+              "classes": "nhsuk-input--width-2"
+            },
+            {
+              "name": "year",
+              "classes": "nhsuk-input--width-4"
             }
           ]
         }) }}
-
-        {% endcall %}
+        <br />
+        <h2>If the the young person is over 18</h2>
+        <p>Unfortunately we cannot accept referrals from young people over 18 years of age. Please contact 111 or <a href="https://www.nhs.uk/service-search/other-services/Child%20and%20adolescent%20mental%20health%20services%20(CAMHS)/LocationSearch/2157" alt="find your local child and adolescent mental health service">click here</a> to find you local CAMHS team</p> 
 
         {{ button({
-          "text": "Save and continue"
-        }) }}
+        "href": "/gp-support-needs",
+        "text": "Save and continue"
+      }) }}
 
       </form>
 

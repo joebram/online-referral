@@ -17,37 +17,6 @@
 
       {% call fieldset({
         legend: {
-          "text": "Patient details continued...",
-          "classes": "nhsuk-fieldset__legend--l",
-          "isPageHeading": true
-        }
-      }) %}
-
-        {{ input({
-          label: {
-            "text": "Ethnicity"
-          },
-          "classes": "nhsuk-u-width-two-thirds",
-          "id": "ethnicity",
-          "name": "ethnicity"
-        }) }}
-
-        {{ input({
-          label: {
-            "text": "School"
-          },
-          "classes": "nhsuk-u-width-two-thirds",
-          "id": "school",
-          "name": "school"
-        }) }}
-
-      {% endcall %}
-
-      {% from 'fieldset/macro.njk' import fieldset %}
-      {% from "input/macro.njk" import input %}
-
-      {% call fieldset({
-        legend: {
           "text": "Family members who live with you",
           "classes": "nhsuk-fieldset__legend--l",
           "isPageHeading": true
