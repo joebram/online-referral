@@ -37,6 +37,20 @@ router.post('/gp-registered', function (req, res) {
   }
 })
 
+router.post('/yp-registered', function (req, res) {
+  // Set a variable to the answer so we can access it later
+  var answer = req.session.data['registered']
+  // Check whether the answer equals yes
+  if (answer == "Yes"){
+    // If the answer is yes send to the next question
+    res.redirect('/yp-registered-doctors')
+  }
+  else {
+    // If the answer is no send to the no screen 
+    res.redirect('/answer-no')
+  }
+})
+
 router.post('/gp-list', function (req, res) {
   // Set a variable to the answer so we can access it later
   var answer = req.session.data['list']

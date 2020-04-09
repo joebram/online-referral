@@ -28,33 +28,40 @@
 
       <form action="/yp-consent" method="post">
 
+        {% from 'radios/macro.njk' import radios %}
+        {% from 'fieldset/macro.njk' import fieldset %}
+        {% from 'hint/macro.njk' import hint %}
+
         {% call fieldset({
           legend: {
-            text: "Do you give consent?",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
+            "text": "Do you give consent for us to use the information that you provide in order to help you? [update this]",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
           }
-        }) %}
-
-        {{ radios({
-          "idPrefix": "give-consent",
-          "name": "give-consent",
-          "items": [
-            {
-              "value": "Yes",
-              "text": "Yes"
-            },
-            {
-              "value": "No",
-              "text": "No"
-            }
-          ]
+          }) %}
+          {{ hint({
+            "text": "[More copy to go here for consent]",
+            "classes": "nhsuk-u-margin-bottom-2"
+          }) }}
+          {{ radios({
+            "idPrefix": "give-consent",
+            "name": "give-consent",
+            "items": [
+          {
+            "value": "Yes",
+            "text": "Yes"
+          },
+          {
+            "value": "No",
+            "text": "No"
+          }
+        ]
         }) }}
 
         {% endcall %}
 
         {{ button({
-          "text": "Continue"
+          "text": "Save and continue"
         }) }}
 
       </form>

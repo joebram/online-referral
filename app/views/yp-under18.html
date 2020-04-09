@@ -10,34 +10,48 @@
 
       <p>Step 5/10</p>
 
-      {% from 'radios/macro.njk' import radios %}
+      <form action="/yp-under18" method="post">
 
-        {{ radios({
-          "idPrefix": "example",
-          "name": "example",
+        {% from 'date-input/macro.njk' import dateInput %}
+
+        {{ dateInput({
+          "id": "example",
+          "namePrefix": "example",
           "fieldset": {
             "legend": {
-              "text": "Are you under 18",
-              "classes": "nhsuk-fieldset__legend--l",
+              "text": "What is your date of birth?",
+              "classes": "nhsuk-label--l",
               "isPageHeading": true
             }
           },
+          "hint": {
+            "text": "For example, 15 3 1984"
+          },
           "items": [
             {
-              "value": "yes",
-              "text": "Yes"
+              "name": "day",
+              "classes": "nhsuk-input--width-2"
             },
             {
-              "value": "no",
-              "text": "No"
+              "name": "month",
+              "classes": "nhsuk-input--width-2"
+            },
+            {
+              "name": "year",
+              "classes": "nhsuk-input--width-4"
             }
           ]
-          }) }}
+        }) }}
+        <br />
+        <h2>If you are over 18</h2>
+        <p>Unfortunately we cannot accept referrals from young people over 18 years of age. Please contact 111 or <a href="https://www.nhs.uk/service-search/other-services/Child%20and%20adolescent%20mental%20health%20services%20(CAMHS)/LocationSearch/2157" alt="find your local child and adolescent mental health service">click here</a> to find you local CAMHS team</p> 
 
-      {{ button({
+        {{ button({
         "href": "/yp-support-needs",
         "text": "Save and continue"
       }) }}
+
+      </form>
 
       {{ backLink({
         "href": "javascript:history.back()",
